@@ -1,0 +1,231 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #fefefe;
+    color: #222;
+    padding-bottom: 100px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #8B0000;
+    color: white;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav li {
+    background-color: #B22222;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+nav li:hover {
+    background-color: #A52A2A;
+}
+
+/* Conteúdo principal */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#texto p {
+    margin-bottom: 16px;
+    text-align: justify;
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+/* Accordion */
+#accordion {
+    margin: 40px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#accordion h3 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s;
+}
+
+#accordion h3:hover {
+    background-color: #45a049;
+}
+
+#videosFotos {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+    background-color: #f9f9f9;
+    padding: 0 20px;
+}
+
+#videosFotos.active {
+    max-height: 1000px;
+    padding: 20px;
+}
+
+/* Imagens */
+#imagens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#imagens img {
+    width: 160px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+#imagens img:hover {
+    transform: scale(1.05);
+}
+
+/* Vídeos */
+#videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#videos video {
+    width: 260px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Quiz e Família */
+#testeConhecimento, #testeFamilia {
+    padding: 25px;
+    background-color: #f5f5f5;
+    margin-top: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pergunta {
+    margin-bottom: 25px;
+}
+
+.pergunta h3 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.pergunta label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.feedback {
+    display: none;
+    padding: 8px 12px;
+    margin-top: 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.correct {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.wrong {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+#resultadoFamilia {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #4a148c;
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 14px;
+    border-top: 3px solid #4CAF50;
+    margin-top: 60px;
+    position: relative;
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #imagens img {
+        width: 100px;
+    }
+
+    #videos video {
+        width: 100%;
+    }
+}

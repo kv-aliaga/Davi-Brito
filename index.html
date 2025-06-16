@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content="5">
+    <title>Document</title>
+    <script >
+        const answers = {
+            q1: 'B', q2: 'A', q3: 'B',
+            q4: 'C', q5: 'D',
+            q6: 'C', q7: 'B'
+        };
+
+        const explanations = {
+            q1: 'Era um vídeo de outra pessoa esquiando, postado como se fosse ele.',
+            q2: 'Foi revelado que usou recursos para a própria loja, gerando polêmica.',
+            q3: 'O curso foi de manuseio de arma de fogo.',
+            q4: '“Calabreso” vem do humorista Toninho Tornado.',
+            q5: 'Raquel Brito é o nome correto.',
+            q6: 'Ele brincou dizendo que pagaria com um guaraná.',
+            q7: 'A blusa “Alto em DEGUÊ” é a mais vendida.'
+        };
+
+        function checkAnswers() {
+            const form = document.forms['quizForm'];
+            Object.keys(answers).forEach(q => {
+                const selected = form.elements[q].value;
+                const fb = document.getElementById('f' + q.slice(1));
+                if (selected === answers[q]) {
+                    fb.textContent = '✔️ Correto! ' + explanations[q];
+                    fb.className = 'feedback correct';
+                } else {
+                    fb.textContent = '❌ Errado. ' + explanations[q];
+                    fb.className = 'feedback wrong';
+                }
+                fb.style.display = 'block';
+            });
+        
+    }</script>
+
+        <script>
+            function calcularFamilia() {
+                const form = document.getElementById('familiaForm');
+                const respostas = ['qf1', 'qf2', 'qf3'];
+                const contagem = {
+                davi: 0,
+                raquel: 0,
+                papai: 0,
+                mamae: 0
+                };
+
+                for (let q of respostas) {
+                const opcoes = form.elements[q];
+                let selecionado = null;
+                for (let opcao of opcoes) {
+                    if (opcao.checked) {
+                    selecionado = opcao.value;
+                    break;
+                    }
+                }
+
+                if (selecionado) {
+                    contagem[selecionado]++;
+                }
+                }
+
+                const resultado = Object.keys(contagem).reduce((a, b) => contagem[a] > contagem[b] ? a : b);
+
+                const mensagens = {
+                davi: "🎉 Você é Davi Brito! Carismático, sonhador e cheio de fé!",
+                raquel: "🌟 Você é Raquel Brito! Protetora, madura e cheia de responsabilidade!",
+                papai: "🚗 Você é Papai Brito! Trabalhador, silencioso e muito sábio.",
+                mamae: "🍛 Você é Mamãe Brito! Carinhosa, forte e coração de manteiga."
+                };
+
+                document.getElementById('resultadoFamilia').textContent = mensagens[resultado];
+            }
+
+        </script>
+
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('#accordion h3');
+        const content = document.querySelector('#videosFotos');
+
+        header.addEventListener('click', () => {
+            content.classList.toggle('active');
+        });
+    });
+</script>
+
+
+</head>
+<body>
+    <header>
+        <h1>
+            Comunidade de Fãs Davi Brito
+        </h1>
+
+        <nav>
+            <ul>
+                <li>Notícias Atualizadas</li>
+                <li>Instagram</li>
+                <li>Loja - Davi Brito</li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <article>
+            <div id="texto">
+                <p>
+                    Davi Brito Santos de Oliveira, nascido em Salvador em 2002, tornou-se um ícone da cultura pop brasileira ao vencer o Big Brother Brasil 24 em 2024, aos 21 anos, conquistando o maior prêmio da história do programa e ganhando projeção nacional. Sua trajetória é marcada por superação e mobilidade social: vindo de uma infância humilde na periferia de Salvador, onde vendia lanches com o pai para ajudar em casa, Davi sempre sonhou em cursar medicina e dar orgulho à família. Trabalhou como motorista de aplicativo enquanto estudava, até se destacar no BBB pelo carisma, autenticidade e expressões marcantes, como o bordão “calma, calabreso!”, que viralizou. Primeiro homem negro retinto a vencer o reality, ele se tornou símbolo de representatividade, inspirando discussões sobre raça, classe e sonhos no Brasil contemporâneo.
+
+                </p>
+
+                <p>
+                    Na grande final do BBB 24, em 16 de abril de 2024, Davi Brito venceu os oponentes.Em Salvador e em seu bairro de Cajazeiras, a festa foi grande: fotos do pai de Davi ajoelhado em oração ao receber a notícia da vitória circularam nas redes sociais, emocionando vizinhos e familiares. O próprio Davi, ao sair do programa, comentou que se orgulhava de representar a periferia baiana e queria usar parte do prêmio para transformar a vida de sua mãe, Elisângela, e de sua família..
+                </p>
+
+                <p>
+                    Em seguida à saída do programa, Davi aceitou um convite para participar do reality show de aventura Acerte ou Caia, exibido na Record TV. Lá, ele não teve sorte: foi o primeiro eliminado de um episódio filmado no Chile. Mesmo assim, em uma das provas, recebeu de presente uma bolsa de estudos na Universidade Estácio de Sá para cursar medicina – o mesmo sonho inicial que ele jurara buscar. O gesto foi visto como um alívio e ao mesmo tempo crítica velada à indefinição de seus planos acadêmicos.
+                </p>
+
+                <p>
+                    A transição do anonimato à celebridade provou-se um desafio para Davi. Nas semanas seguintes, seu nome apareceu em manchetes das mais variadas formas. De um lado, memes e “pegadinhas” carinhosas: fãs criaram montagens irreverentes com seu rosto, fazendo paródias até de filmes de ação em cenários absurdos (como se ele pilotasse um helicóptero no deserto). A célebre “febre fake” (o episódio em que ele inventou um mal-estar para adiar um compromisso) foi remixada em piadas pelo país. De outro, críticas e polêmicas de fato: o próprio Davi reconheceu publicamente que sua “imaturidade” e falta de orientação profissional pesaram na queda de popularidade. Em março de 2025, admitiu em entrevistas que perdeu cerca de 3 milhões de seguidores no Instagram após uma série de deslizes. Ele mesmo culpou a ausência de uma estrutura de apoio adequada. Em conversas gravadas, reclamou que a Globo, emissora do programa, não ofereceu suporte próximo em Salvador, e que ele ficou sem quem o preparasse para lidar com a imprensa e as armadilhas da fama. Admitiu que reagia com nervosismo a provocações de repórteres (“eu surtava, não tinha direcionamento”), reforçando a imagem de alguém despreparado para o holofote.
+                </p>
+
+                <p>
+                    Esse momento de turbulência incluiu mais polêmicas pessoais. Ao reatar brevemente com uma empresária baiana em início de 2025, divulgou com empolgação nas redes sociais que ela estava grávida de seu primeiro filho. A notícia foi recebida com surpresa pelos fãs, pois Davi nunca havia comentado sobre planos de família no BBB. Pouco depois, acabou se esclarecendo que ele havia anunciado a gravidez sem a autorização da então namorada, o que a deixou contrariada. Em um desabafo emotivo, Davi pediu desculpas publicamente por se precipitar e revelou ter sido repreendido por ela, que ainda ressaltou seu “caráter” na ocasião. O mal-entendido culminou em mais um fim de relacionamento para o ex-BBB em abril de 2025.
+                </p>
+
+                <p>
+                    Hoje Davi Brito é visto como um personagem complexo no universo do entretenimento brasileiro. De um lado, é comemorado por ter rompido barreiras sociais: um jovem negro, nascido em periferia pobre, com sonhos simples, que chegou ao topo do reality mais popular do país. A vitória dele inspirou debates sobre racismo, representatividade e a ascensão de pessoas marginalizadas na mídia. Especialistas afirmam que sua conquista dá visibilidade ao “prótagonismo preto” e desafia estereótipos, mostrando que uma audiência nacional e heterogênea pode votar em um campeão que seja, ao mesmo tempo, honesto e ligado às próprias raízes.
+                </p>
+            </div>
+
+            <div id="accordion">
+                <h3>Clique para mais fotos e videos do brother mais badalado do Brasil!</h3>
+
+                <div id="videosFotos">
+                    <div id="imagens">
+                        <img src="C:\Users\kavhs\OneDrive\Desktop\Programação\HTML\SITE DAVI BRITO\davi brito\calma_calabreso.png" alt="">
+                        <img src="C:\Users\kavhs\OneDrive\Desktop\Programação\HTML\SITE DAVI BRITO\davi brito\davi_baiana.jpeg" alt="">
+                        <img src="C:\Users\kavhs\OneDrive\Desktop\Programação\HTML\SITE DAVI BRITO\davi brito\dr_davi.jpeg" alt="">
+                        <img src="C:\Users\kavhs\OneDrive\Desktop\Programação\HTML\SITE DAVI BRITO\davi brito\robert_davivost.png" alt="">
+                        <img src="C:\Users\kavhs\OneDrive\Desktop\Programação\HTML\SITE DAVI BRITO\davi brito\sem_abigo.png" alt="">
+                    </div>
+
+                    <div id="videos">
+                        <video controls>
+                            <source src="C:\Users\kavhs\OneDrive\Desktop\Programação\HTML\SITE DAVI BRITO\davi brito\davi_sedutor.mp4" type="video/mp4">
+                        </video>
+
+                        <video controls>
+                            <source src="C:\Users\kavhs\OneDrive\Desktop\Programação\HTML\SITE DAVI BRITO\davi brito\davi_tinta.mp4" type="video/mp4">
+                        </video>
+
+                        <video controls>
+                            <source src="C:\Users\kavhs\OneDrive\Desktop\Programação\HTML\SITE DAVI BRITO\davi brito\davi_zoeiro.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <aside id="testeConhecimento">
+        <h2>
+            Teste seu conhecimento! Você conhece o calabreso?
+        </h2>
+
+        <form name="quizForm">
+            <div class="pergunta">
+                <h3>1. No Chile, Davi publicou um vídeo que parecia esqui… mas na real era o guê?</h3>
+                <label><input type="radio" name="q1" value="A"> A) Reflexo real da pista de neve</label><br>
+                <label><input type="radio" name="q1" value="B"> B) Trecho de outra pessoa esquiando</label><br>
+                <label><input type="radio" name="q1" value="C"> C) Consumindo vinhos chilenos e fantasiado de esquiador</label><br>
+                <label><input type="radio" name="q1" value="D"> D) Vídeo de outra pessoa postado por engano</label>
+                <div id="f1" class="feedback"></div>
+            </div>
+            
+            <div class="pergunta">
+                <h3>2. Durante as doações ao RS, por que Davi apagou a prestação de contas?</h3>
+                <label><input type="radio" name="q2" value="A"> A) Foi descoberto como esquema de pirâmide para financiar sua loja Deguê</label><br>
+                <label><input type="radio" name="q2" value="B"> B) Críticas por usar parte dos recursos para pagar sua viagem</label><br>
+                <label><input type="radio" name="q2" value="C"> C) Erro no comprovante do Pix</label><br>
+                <label><input type="radio" name="q2" value="D"> D) Problemas com o app bancário</label>
+                <div id="f2" class="feedback"></div>
+            </div>
+
+            <div class="pergunta">
+                <h3>3. Qual curso polêmico Davi celebrou com “certificado na mão”?</h3>
+                <label><input type="radio" name="q3" value="A"> A) Curso de culinária com especialização em charcuteria</label><br>
+                <label><input type="radio" name="q3" value="B"> B) Curso de manuseio de arma de fogo</label><br>
+                <label><input type="radio" name="q3" value="C"> C) Treinamento para ser advogado na Estácio</label><br>
+                <label><input type="radio" name="q3" value="D"> D) Certificação em esportes de inverno</label>
+                <div id="f3" class="feedback"></div>
+            </div>
+
+            <div class="pergunta">
+                <h3>4. “Calabreso”: o que é, de verdade?</h3>
+                <label><input type="radio" name="q4" value="A"> A) Um xingamento gordofóbico</label><br>
+                <label><input type="radio" name="q4" value="B"> B) Gíria inventada por Davi</label><br>
+                <label><input type="radio" name="q4" value="C"> C) Variante de gíria criada por Toninho Tornado</label><br>
+                <label><input type="radio" name="q4" value="D"> D) Nome de um prato baiano</label>
+                <div id="f4" class="feedback"></div>
+            </div>
+
+            <div class="pergunta">
+                <h3>5. Qual o nome da irmã de Davi Brito (Yotra)...</h3>
+                <label><input type="radio" name="q5" value="A"> A) Rilary Brito</label><br>
+                <label><input type="radio" name="q5" value="B"> B) Renata Brito</label><br>
+                <label><input type="radio" name="q5" value="C"> C) Rosana Brito</label><br>
+                <label><input type="radio" name="q5" value="D"> D) Raquel Brito</label>
+                <div id="f5" class="feedback"></div>
+            </div>
+
+            <div class="pergunta">
+                <h3>6. Ele prometeu pagar sua equipe com...</h3>
+                <label><input type="radio" name="q6" value="A"> A) Um “copo de café”</label><br>
+                <label><input type="radio" name="q6" value="B"> B) Passeios em Dubai</label><br>
+                <label><input type="radio" name="q6" value="C"> C) Um “guaraná”</label><br>
+                <label><input type="radio" name="q6" value="D"> D) Mil reais</label>
+                <div id="f6" class="feedback"></div>
+            </div>
+
+            <div class="pergunta">
+                <h3>7. Qual a roupa mais vendida da loja de Davi Brito (Deguê)...</h3>
+                <label><input type="radio" name="q7" value="A"> A) Blusa Drake</label><br>
+                <label><input type="radio" name="q7" value="B"> B) Alto em DEGUÊ</label><br>
+                <label><input type="radio" name="q7" value="C"> C) Eu amo a Deguê</label><br>
+                <label><input type="radio" name="q7" value="D"> D) Calma Toscaneto</label>
+                <div id="f7" class="feedback"></div>
+            </div>
+
+            <button type="button" onclick="checkAnswers()">Verificar respostas</button>
+        </form>
+    </aside>
+
+    <aside id="testeFamilia">
+        <h2>Qual membro da família Brito você seria?</h2>
+        <form id="familiaForm">
+            <div class="pergunta">
+            <h3>1. O que você faria com um prêmio em dinheiro?</h3>
+            <label><input type="radio" name="qf1" value="davi"> Investiria em educação e abriria uma loja</label><br>
+            <label><input type="radio" name="qf1" value="raquel"> Guardaria e cuidaria dos irmãos</label><br>
+            <label><input type="radio" name="qf1" value="papai"> Compraria um carro para trabalhar</label><br>
+            <label><input type="radio" name="qf1" value="mamae"> Reformaria a casa da família</label><br>
+            </div>
+
+            <div class="pergunta">
+            <h3>2. Qual dessas frases mais combina com você?</h3>
+            <label><input type="radio" name="qf2" value="davi"> “Nunca foi sorte, sempre foi Deus.”</label><br>
+            <label><input type="radio" name="qf2" value="raquel"> “Família em primeiro lugar.”</label><br>
+            <label><input type="radio" name="qf2" value="papai"> “Trabalhar é minha missão.”</label><br>
+            <label><input type="radio" name="qf2" value="mamae"> “Comida boa resolve tudo.”</label><br>
+            </div>
+
+            <div class="pergunta">
+            <h3>3. Em uma festa, você é...</h3>
+            <label><input type="radio" name="qf3" value="davi"> O que dança, brinca e viraliza</label><br>
+            <label><input type="radio" name="qf3" value="raquel"> O que cuida de todo mundo</label><br>
+            <label><input type="radio" name="qf3" value="papai"> O que fica de canto observando</label><br>
+            <label><input type="radio" name="qf3" value="mamae"> O que trouxe as marmitas e sobremesas</label><br>
+            </div>
+
+            <button type="button" onclick="calcularFamilia()">Descobrir!</button>
+            <div id="resultadoFamilia" style="margin-top: 15px; font-weight: bold;"></div>
+        </form>
+    </aside>
+
+    <footer>
+        <p>Davi Brito — Todos os direitos reservados © 2025</p>
+        <p><a href="mailto:seuemail@exemplo.com">Contato</a> | <a href="#">Política de Privacidade</a></p>
+    </footer>
+</body>
+</html>
